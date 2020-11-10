@@ -1,5 +1,8 @@
 import * as React from 'react';
 import Styled from 'styled-components/native';
+import Icon from 'react-native-vector-icons/Ionicons';
+import { createStackNavigator } from '@react-navigation/stack';
+import InputEmailScreen from '~/Screens/InputEmail';
 
 const View = Styled.View`
     backgroundColor: #008388;
@@ -21,7 +24,7 @@ const NameText = Styled.Text`
 `;
 
 const TextInput = Styled.TextInput`
-    width:80%;
+    width:85%;
     border-color:white;
     height: 40px;
     border-left-width: 0px;
@@ -32,11 +35,10 @@ const TextInput = Styled.TextInput`
     font-size:20px;
     color:white;
     padding-bottom:1px;
-
 `;
 
 const TextNameInput = Styled.TextInput`
-width:80%;
+    width:85%;
     border-color:white;
     height: 40px;
     border-left-width: 0px;
@@ -48,10 +50,16 @@ width:80%;
     color:white;
     padding-bottom:1px;
 `;
-const DetailsScreen = () => {
+
+const NextIcon = Styled(Icon)`
+    margin-left:80%;
+    margin-top:60%;
+    color:white;
+`;
+
+function SignUpScreen({ navigation }) {
     const [FirstNamevalue, onChangeText] = React.useState('');
     const [LastNamevalue, unChangeText] = React.useState('');
-
 
     return (
         <View>
@@ -68,8 +76,34 @@ const DetailsScreen = () => {
                 onChangeText={text => unChangeText(text)}
                 value={LastNamevalue}
             />
+            <NextIcon name="chevron-forward-circle-outline" size={50} onPress={() => navigation.navigate('InputEmailScreen')} />
         </View>
-
     );
 }
-export default DetailsScreen;
+const Stack = createStackNavigator();
+
+function SignUp() {
+    return (
+
+        <Stack.Navigator>
+            <Stack.Screen name='SignUp' component={SignUpScreen} options={{
+                title: '',
+                headerTransparent: true,
+                headerTintColor: 'white',
+                headerTitleStyle: {
+                    fontWeight: 'bold',
+                },
+            }} />
+            <Stack.Screen name="InputEmailScreen" component={InputEmailScreen} options={{
+                title: '',
+                headerTransparent: true,
+                headerTintColor: 'white',
+                headerTitleStyle: {
+                    fontWeight: 'bold',
+                },
+            }} />
+        </Stack.Navigator>
+    );
+}
+
+export default SignUp;

@@ -7,16 +7,17 @@ const StyledButton = Styled.TouchableOpacity`
   border-radius: 20px;
   justify-content: center;
   align-items: center;
-  background-color: #008388;
+  background-color: white;
   margin-left: 5%;
-  margin-top: -80%;
+  margin-top :7%;
+  margin-bottom:3%;
   border: 1px;
   border-color: white;
 `;
 const Label = Styled.Text`
 font-Weight: 700;
 font-size: 17px;
-color: white;
+color: #008388;
 `;
 
 interface Props {
@@ -25,7 +26,7 @@ interface Props {
     onPress?: () => void;
 }
 
-const Button1 = ({ label, style, onPress }: Props) => {
+const FacebookLoginBtn = ({ label, style, onPress }: Props) => {
     return (
         <StyledButton style={style} onPress={onPress}>
             <Label>{label}</Label>
@@ -34,4 +35,4 @@ const Button1 = ({ label, style, onPress }: Props) => {
 };
 
 
-export default Button1;
+export default FacebookLoginBtn;

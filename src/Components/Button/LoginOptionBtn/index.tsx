@@ -2,21 +2,16 @@ import React from 'react';
 import Styled from 'styled-components/native';
 
 const StyledButton = Styled.TouchableOpacity`
-  width: 90%;
   height: 42px;
-  border-radius: 20px;
   justify-content: center;
-  align-items: center;
-  background-color: white;
   margin-left: 5%;
-  margin-top: -80%;
-  border: 1px;
-  border-color: white;
+  margin-top: 4%;
 `;
+
 const Label = Styled.Text`
-color: #008388;
-font-Weight: 700;
-font-size: 17px;
+font-size: 15px;
+color: white;
+margin-left:3%;
 `;
 
 interface Props {
@@ -25,7 +20,7 @@ interface Props {
     onPress?: () => void;
 }
 
-const Button2 = ({ label, style, onPress }: Props) => {
+const LoginOptionBtn = ({ label, style, onPress }: Props) => {
     return (
         <StyledButton style={style} onPress={onPress}>
             <Label>{label}</Label>
@@ -33,5 +28,4 @@ const Button2 = ({ label, style, onPress }: Props) => {
     );
 };
 
-
-export default Button2;
+export default LoginOptionBtn;
