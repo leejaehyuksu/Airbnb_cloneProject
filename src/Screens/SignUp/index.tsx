@@ -3,6 +3,7 @@ import Styled from 'styled-components/native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { createStackNavigator } from '@react-navigation/stack';
 import InputEmailScreen from '~/Screens/InputEmail';
+import SignUpBtn from '~/Components/Button/SignUpBtn';
 
 const View = Styled.View`
     backgroundColor: #008388;
@@ -14,7 +15,7 @@ const MainText = Styled.Text`
     margin-left: 5%;
     margin-top: 15%;
     fontSize: 25px;
-    font-Weight: 500;
+    font-Weight: 700;
 `;
 
 const NameText = Styled.Text`
@@ -57,6 +58,8 @@ const NextIcon = Styled(Icon)`
     color:white;
 `;
 
+
+
 function SignUpScreen({ navigation }) {
     const [FirstNamevalue, onChangeText] = React.useState('');
     const [LastNamevalue, unChangeText] = React.useState('');
@@ -78,8 +81,10 @@ function SignUpScreen({ navigation }) {
             />
             <NextIcon name="chevron-forward-circle-outline" size={50} onPress={() => navigation.navigate('InputEmailScreen')} />
         </View>
+
     );
 }
+
 const Stack = createStackNavigator();
 
 function SignUp() {

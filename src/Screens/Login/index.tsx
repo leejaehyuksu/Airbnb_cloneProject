@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Styled from 'styled-components/native';
 import Icon from 'react-native-vector-icons/Ionicons';
+import UserPhoneBtn from '~/Components/Button/UsePhoneBtn';
 
 const View = Styled.View`
     backgroundColor: #008388;
@@ -10,9 +11,9 @@ const View = Styled.View`
 const MainText = Styled.Text`
     color: white;
     margin-left: 5%;
-    margin-top: 15%;
+    margin-top: 10%;
     fontSize: 25px;
-    font-Weight: 500;
+    font-Weight: 700;
 `;
 
 const NameText = Styled.Text`
@@ -51,31 +52,58 @@ const TextNameInput = Styled.TextInput`
 
 const StyledIcon = Styled(Icon)`
     margin-left:80%;
-    margin-top:60%;
+    margin-top:57%;
 `;
 
-const LoginScreen = () => {
-    const [FirstNamevalue, onChangeText] = React.useState('');
-    const [LastNamevalue, unChangeText] = React.useState('');
+const TextPasswordCheck = Styled.Text`
+    color: white;
+    margin-left:78%;
+    margin-top:-5%;
+`;
+
+const ForgetPasswordText = Styled.Text`
+    color: white;
+    margin-top: 5%;
+    margin-left:45%;
+`;
+
+const UsePhoneBtn = Styled(UserPhoneBtn)`
+    width : 30%;
+    margin-top : -11%;
+    backgroundColor: #008388;
+    color: white;
+`;
+
+
+function LoginScreen({ navigation }) {
+    const [Emailvalue, onChangeText] = React.useState('');
+    const [Passwordvalue, unChangeText] = React.useState('');
 
     return (
         <View>
-            <MainText>이름을 입력해 주세요.</MainText>
-            <NameText>이름(예: 길동)</NameText>
+            <ForgetPasswordText>비밀번호가 생각나지 않으세요?</ForgetPasswordText>
+            <MainText>로그인</MainText>
+            <NameText>이메일 주소</NameText>
             <TextInput
                 style={{}}
                 onChangeText={text => onChangeText(text)}
-                value={FirstNamevalue}
+                value={Emailvalue}
             />
-            <NameText>성(예: 홍)</NameText>
+            <NameText>비밀번호</NameText>
+            <TextPasswordCheck>표시하기</TextPasswordCheck>
             <TextNameInput
                 style={{}}
                 onChangeText={text => unChangeText(text)}
-                value={LastNamevalue}
+                value={Passwordvalue}
             />
             <StyledIcon name="chevron-forward-circle-outline" size={50} color="white" />
+            <UsePhoneBtn
+                style={{}}
+                label="전화번호 사용"
+                onPress={() => navigation.navigate('SignUp')}
+            />
         </View>
 
     );
 }
-export default LoginScreen;
+export default LoginScreen; 

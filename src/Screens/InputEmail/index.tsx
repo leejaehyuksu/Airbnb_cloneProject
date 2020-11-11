@@ -1,6 +1,8 @@
 import * as React from 'react';
 import Styled from 'styled-components/native';
 import Icon from 'react-native-vector-icons/Ionicons';
+import PasswordSetScreen from '~/Screens/PasswordSet';
+import { createStackNavigator } from '@react-navigation/stack';
 
 const View = Styled.View`
     backgroundColor: #008388;
@@ -12,7 +14,7 @@ const MainText = Styled.Text`
     margin-left: 5%;
     margin-top: 15%;
     fontSize: 25px;
-    font-Weight: 500;
+    font-Weight: 700;
 `;
 
 const NameText = Styled.Text`
@@ -35,10 +37,10 @@ const TextInput = Styled.TextInput`
     padding-bottom:1px;
 `;
 
-
 const StyledIcon = Styled(Icon)`
     margin-left:80%;
-    margin-top:60%;
+    margin-top:45%;
+    color:white;
 `;
 const TextAgree = Styled.Text`
 color: white;
@@ -54,7 +56,7 @@ padding-left: 6%;
 fontSize: 13.2px;
 `;
 
-const InputEmailScreen = () => {
+function InputEmailScreen({ navigation }) {
     const [emailvalue, onChangeText] = React.useState('');
 
     return (
@@ -68,9 +70,35 @@ const InputEmailScreen = () => {
             />
             <TextAgree>에이비앤비의 화원 전용 할인, 추천 여행 정보,프로모션,{"\n"}정책 변경사항 이메일을 보내드립니다. 계정 관리의{"\n"}환경설정 또는 프로모션 알림에서 언제든지 메세지{"\n"}수신을 거부할 수 있습니다.</TextAgree>
             <TextYesorNO>에어비앤비에서는 보내는 마케팅 메시지를 받고{"\n"}싶지 않습니다.</TextYesorNO>
-            <StyledIcon name="chevron-forward-circle-outline" size={50} color="white" />
+            <StyledIcon name="chevron-forward-circle-outline" size={50} onPress={() => navigation.navigate('PasswordSetScreen')} />
         </View>
 
     );
 }
-export default InputEmailScreen;
+
+const Stack = createStackNavigator();
+function EmailInput() {
+    return (
+
+        <Stack.Navigator>
+            <Stack.Screen name='EmailInput' component={InputEmailScreen} options={{
+                title: '',
+                headerTransparent: true,
+                headerTintColor: 'white',
+                headerTitleStyle: {
+                    fontWeight: 'bold',
+                },
+            }} />
+            <Stack.Screen name="PasswordSetScreen" component={PasswordSetScreen} options={{
+                title: '',
+                headerTransparent: true,
+                headerTintColor: 'white',
+                headerTitleStyle: {
+                    fontWeight: 'bold',
+                },
+            }} />
+        </Stack.Navigator>
+    );
+}
+
+export default EmailInput;
