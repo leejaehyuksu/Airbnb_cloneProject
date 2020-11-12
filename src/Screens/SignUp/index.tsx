@@ -79,7 +79,7 @@ function SignUpScreen({ navigation }) {
                 onChangeText={text => unChangeText(text)}
                 value={LastNamevalue}
             />
-            <NextIcon name="chevron-forward-circle-outline" size={50} onPress={() => navigation.navigate('InputEmailScreen')} />
+            <NextIcon name="chevron-forward-circle-outline" size={50} onPress={() => navigation.navigate('InputEmail')} />
         </View>
 
     );
@@ -89,24 +89,9 @@ const Stack = createStackNavigator();
 
 function SignUp() {
     return (
-
         <Stack.Navigator>
-            <Stack.Screen name='SignUp' component={SignUpScreen} options={{
-                title: '',
-                headerTransparent: true,
-                headerTintColor: 'white',
-                headerTitleStyle: {
-                    fontWeight: 'bold',
-                },
-            }} />
-            <Stack.Screen name="InputEmailScreen" component={InputEmailScreen} options={{
-                title: '',
-                headerTransparent: true,
-                headerTintColor: 'white',
-                headerTitleStyle: {
-                    fontWeight: 'bold',
-                },
-            }} />
+            <Stack.Screen name='SignUp' component={SignUpScreen} />
+            <Stack.Screen name="InputEmail" component={InputEmailScreen} />
         </Stack.Navigator>
     );
 }

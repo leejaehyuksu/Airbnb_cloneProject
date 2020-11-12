@@ -62,30 +62,5 @@ function LoginOptionScreen({ navigation }) {
     );
 }
 
-const Stack = createStackNavigator();
 
-function LoginOption() {
-    return (
-
-        <Stack.Navigator>
-            <Stack.Screen name='LoginOption' component={LoginOptionScreen} options={{
-                title: '',
-                headerTransparent: true,
-                headerTintColor: 'white',
-                headerTitleStyle: {
-                    fontWeight: 'bold',
-                },
-            }} />
-            <Stack.Screen name="SignUp" component={SignUpScreen} options={{
-                title: '',
-                headerTransparent: true,
-                headerTintColor: 'white',
-                headerTitleStyle: {
-                    fontWeight: 'bold',
-                },
-            }} />
-        </Stack.Navigator>
-    );
-}
-
-export default LoginOption;
+export default LoginOptionScreen;
