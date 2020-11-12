@@ -2,6 +2,8 @@ import * as React from 'react';
 import Styled from 'styled-components/native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
+
+
 const View = Styled.View`
     backgroundColor: #008388;
     flex: 1;
@@ -49,8 +51,9 @@ const TextPasswordCheck = Styled.Text`
     margin-left:78%;
     margin-top:-5%;
 `;
-const PasswordSetScreen = () => {
+function PasswordSetScreen({ navigation }) {
     const [Passwordvalue, onChangeText] = React.useState('');
+
     return (
         <View>
             <MainText>비밀번호 설정하기</MainText>
@@ -61,8 +64,10 @@ const PasswordSetScreen = () => {
                 style={{}}
                 onChangeText={text => onChangeText(text)}
                 value={Passwordvalue}
+                underlineColorAndroid="transparent"
+                secureTextEntry={true}
             />
-            <StyledIcon name="chevron-forward-circle-outline" size={50} />
+            <StyledIcon name="chevron-forward-circle-outline" size={50} onPress={() => navigation.navigate('InputBirth')} />
         </View>
 
     );

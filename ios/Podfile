@@ -10,6 +10,8 @@ target 'Airbnb_cloneProject' do
 
   pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
 
+  pod 'react-native-password-field', :path => '../node_modules/react-native-password-field'
+
   target 'Airbnb_cloneProjectTests' do
     inherit! :complete
     # Pods for testing

@@ -9,6 +9,7 @@ import LoginOptionScreen from '~/Screens/LoginOption';
 import LoginScreen from '~/Screens/Login';
 import InputEmailScreen from '~/Screens/InputEmail';
 import PasswordSetScreen from '~/Screens/PasswordSet';
+import InputBirthScreen from '~/Screens/InputBirth';
 
 const Stack = createStackNavigator();
 
@@ -34,12 +35,17 @@ const MainNavigator = () => {
                 headerTransparent: true,
                 headerTintColor: 'white',
             }} />
-            <Stack.Screen name='EmailInput' component={InputEmailScreen} options={{
+            <Stack.Screen name='InputEmail' component={InputEmailScreen} options={{
                 title: '',
                 headerTransparent: true,
                 headerTintColor: 'white',
             }} />
             <Stack.Screen name="PasswordSet" component={PasswordSetScreen} options={{
+                title: '',
+                headerTransparent: true,
+                headerTintColor: 'white',
+            }} />
+            <Stack.Screen name="InputBirth" component={InputBirthScreen} options={{
                 title: '',
                 headerTransparent: true,
                 headerTintColor: 'white',

@@ -39,7 +39,7 @@ const TextInput = Styled.TextInput`
 
 const StyledIcon = Styled(Icon)`
     margin-left:80%;
-    margin-top:45%;
+    margin-top:43%;
     color:white;
 `;
 const TextAgree = Styled.Text`
@@ -72,10 +72,6 @@ function InputEmailScreen({ navigation }) {
             <TextYesorNO>에어비앤비에서는 보내는 마케팅 메시지를 받고{"\n"}싶지 않습니다.</TextYesorNO>
             <StyledIcon name="chevron-forward-circle-outline" size={50} onPress={() => navigation.navigate('PasswordSet')} />
         </View>
-
     );
 }
-
-
-
 export default InputEmailScreen;

@@ -95,6 +95,7 @@ function LoginScreen({ navigation }) {
                 style={{}}
                 onChangeText={text => unChangeText(text)}
                 value={Passwordvalue}
+                secureTextEntry={true}
             />
             <StyledIcon name="chevron-forward-circle-outline" size={50} color="white" />
             <UsePhoneBtn

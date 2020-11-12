@@ -44,7 +44,6 @@ const FacebookIcon = Styled(Icon)`
 
 function HomeScreen({ navigation }) {
     return (
-
         <View>
             <LoginBtn
                 style={{}}
