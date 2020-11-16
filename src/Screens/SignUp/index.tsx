@@ -1,8 +1,7 @@
 import * as React from 'react';
 import Styled from 'styled-components/native';
 import Icon from 'react-native-vector-icons/Ionicons';
-import { createStackNavigator } from '@react-navigation/stack';
-import InputEmailScreen from '~/Screens/InputEmail';
+
 
 
 const View = Styled.View`

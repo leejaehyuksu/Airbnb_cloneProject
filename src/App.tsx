@@ -3,9 +3,7 @@ import Navigator from '~/Screens/Navigator';
 
 function App() {
   return (
-
     <Navigator></Navigator>
-
   );
 }
 

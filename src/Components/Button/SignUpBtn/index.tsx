@@ -7,11 +7,11 @@ const StyledButton = Styled.TouchableOpacity`
   border-radius: 20px;
   justify-content: center;
   align-items: center;
-  background-color: #008388;
   margin-left: 5%;
   margin-top: 0%;
   border: 1px;
   border-color: white;
+  background-color:#008388;
 `;
 const Label = Styled.Text`
 font-Weight: 700;
@@ -32,6 +32,5 @@ const SignUpBtn = ({ label, style, onPress }: Props) => {
         </StyledButton>
     );
 };
-
 
 export default SignUpBtn;

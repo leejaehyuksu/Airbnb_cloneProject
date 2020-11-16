@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Styled from 'styled-components/native';
 import Icon from 'react-native-vector-icons/Ionicons';
-import UserPhoneBtn from '~/Components/Button/UsePhoneBtn';
+
 
 const View = Styled.View`
     backgroundColor: #008388;
@@ -67,13 +67,6 @@ const ForgetPasswordText = Styled.Text`
     margin-left:45%;
 `;
 
-const UsePhoneBtn = Styled(UserPhoneBtn)`
-    width : 30%;
-    margin-top : -11%;
-    backgroundColor: #008388;
-    color: white;
-`;
-
 
 function LoginScreen({ navigation }) {
     const [Emailvalue, onChangeText] = React.useState('');
@@ -97,12 +90,7 @@ function LoginScreen({ navigation }) {
                 value={Passwordvalue}
                 secureTextEntry={true}
             />
-            <StyledIcon name="chevron-forward-circle-outline" size={50} color="white" />
-            <UsePhoneBtn
-                style={{}}
-                label="전화번호 사용"
-                onPress={() => navigation.navigate('SignUp')}
-            />
+            <StyledIcon name="chevron-forward-circle-outline" size={50} color="white" onPress={() => navigation.navigate('Main')} />
         </View>
 
     );

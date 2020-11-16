@@ -1,8 +1,7 @@
 import * as React from 'react';
 import Styled from 'styled-components/native';
 import Icon from 'react-native-vector-icons/Ionicons';
-import PasswordSetScreen from '~/Screens/PasswordSet';
-import { createStackNavigator } from '@react-navigation/stack';
+
 
 const View = Styled.View`
     backgroundColor: #008388;
